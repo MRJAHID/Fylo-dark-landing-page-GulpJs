@@ -1,0 +1,105 @@
+html {
+    font-size: 100%;
+}
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-body;
+    font-size: calc(1rem + 0.75vw);
+    line-height: 1.3;
+}
+*,
+a {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    @include breakpoint-up(large) {
+        font-size: 1rem;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $font-title;
+    margin-top: 0px;
+}
+p {
+    margin-top: 0px;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    @include breakpoint-up(large) {
+        font-size: 1rem;
+    }
+}
+section {
+    padding: 0px 1.6875rem 10rem;
+}
+
+button,
+.button {
+    border: none;
+    border-radius: 3.125rem;
+    background: linear-gradient(to right, $ctaCyan, $ctaBlue);
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 15px 40px;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+    text-align: center;
+    @include breakpoint-up(medium) {
+        max-width: 200px;
+    }
+    &:hover {
+        background: linear-gradient(to right, $ctaBlue, $ctaCyan);
+    }
+
+    &--large {
+        @extend .button;
+        padding: 20px;
+        @include breakpoint-up(medium) {
+            max-width: 285px;
+        }
+    }
+}
+main {
+    background-color: $mainBg;
+    background-image: url(../../img/bg-curvy-desktop.svg);
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 25px 20px 50px 20px;
+
+    @include breakpoint-up(large) {
+        padding: 73px 60px 87px 60px;
+    }
+
+    &--small {
+        @extend .container;
+        max-width: 920px;
+    }
+}
+
+input[type='text'],
+input[type='email'] {
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-family: $font-body;
+    font-weight: 700;
+    color: $footerBg;
+    padding: 17px 40px;
+}
